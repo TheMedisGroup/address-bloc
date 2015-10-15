@@ -1,10 +1,8 @@
-	def greeting 
- 		first, second, third, fourth = ARGV
- 		salutation = ARGV[0]	
- 		puts "#{salutation} #{second}"
- 		puts "#{salutation} #{third}"
- 		puts "#{salutation} #{fourth}"
+	def greeting
+ 	# 	first, second, third, fourth = ARGV
+ 		salutation = ARGV.shift()
+		ARGV.each do |arg|
+	 		puts "#{salutation} #{arg}"
+		end
  	end
  	greeting
-
-
