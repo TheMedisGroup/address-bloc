@@ -98,4 +98,35 @@ end
        check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
      end
 	 end
+
+	 describe "#import_from_csv_2" do
+ 		it "imports the correct number of entries" do
+
+ 			book.import_from_csv("entries_2.csv")
+ 			book_size = book.entries.size
+
+ 			expect(book_size).to eql 3
+ 		end
+
+		it "imports the 1st entry" do
+			book.import_from_csv("entries_2.csv")
+
+			entry_1 = book.entries[0]
+			check_entry(entry_1, "Baby", "420-512-4789", "baby@babygirl.com")
+		end
+
+		 it "imports the 2nd entry" do
+       book.import_from_csv("entries_2.csv")
+
+       entry_2 = book.entries[1]
+			 check_entry(entry_2, "Michael", "123-456-7891","Michael@medis.com")
+     end
+
+     it "imports the 3rd entry" do
+       book.import_from_csv("entries_2.csv")
+
+       entry_3 = book.entries[2]
+       check_entry(entry_3, "Ninja", "999-888-0000", "Ninja@coolest.com")
+     end
+	end
 end
